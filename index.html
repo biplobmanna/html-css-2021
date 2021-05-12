@@ -10,14 +10,13 @@
 <body>
     <div class="navbar">
         <div class="container">
-            <a href="#">Hooligan<span>Human</span></a>
+            <a class="logo" href="#">Hooligan<span>Human</span></a>
 
             <img src="images/hamburger-menu.svg" class="mobile-menu" id="mobile-cta" alt="hamburger-menu">
 
             <nav>
-                <img src="images/exit-menu.svg" class="mobile-menu-exit" id="mobile-exit" alt="mobile-menu-exit">
-
-                <ul class="primary-nav">
+                <div class="mobile-menu-exit" id="btn-exit">x</div>
+                <ul class="primary-nav" style="margin-top: 5em;">
                     <li class="current"><a href="#">Home</a></li>
                     <li><a href="#">Stupidity</a></li>
                     <li><a href="#">Carnage</a></li>
@@ -31,7 +30,7 @@
         </div>
     </div>
 
-    <section class="hero">
+    <section class="hero-section">
         <div class="container">
             <div class="left-col">
                 <p class="sub-head">It's bloody &amp; grimy!</p>
@@ -39,7 +38,7 @@
 
                 <div class="hero-cta">
                     <a href="#" class="primary-cta">Kill for free</a>
-                    <a href="#" class="primary-cta">
+                    <a href="#" class="watch-video-cta">
                         <img src="images/video-icon.svg" alt="watch-video">Watch massacre!
                     </a>
                 </div>
@@ -48,7 +47,7 @@
         </div>
     </section>
 
-    <section class="features">
+    <section class="features-section">
         <div class="container">
             <ul>
                 <li>Blood and Guts!</li>
@@ -108,5 +107,6 @@
             </div>
         </div>
     </section>
+    <script src="./js/mobile-menu.js" language="javascript" type="text/javascript"></script>
 </body>
 </html>
