@@ -102,7 +102,7 @@ section {
     }
 
     .hero-img {
-        width: 50%;
+
         margin-top: 3em;
     }
 }
@@ -112,18 +112,20 @@ section {
     color: white;
 
     ul {
-        padding-top: 0.1em;
+        margin: 0;
         padding-left: 0.1em;
-        position: relative;
-        // display: grid;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
 
         li {
             font-size: 1.1em;
             margin-bottom: 1em;
             margin-left: 3em;
+            position: relative;
+
              &:before {
-                 content: ' ';
-                 left: -0.2em;
+                 content: '';
+                 left: -2em;
                  position: absolute;
                  width: 20px;
                  height: 20px;
@@ -212,8 +214,9 @@ nav {
     height: 100vh;
     padding: 1em;
 
-    .primary_nav {
-        margin-top: 5em;
+    // Somehow this margin portion is not working, and I have no idea why that is!
+    ul.primary_nav {
+       margin-top: 80px;
     }
 
     li {
@@ -240,5 +243,177 @@ nav {
     &:hover {
         font-weight: normal;
         cursor: pointer;
+    }
+}
+
+// Responsive design screen
+@media only screen and (min-width: 768px) {
+    
+    .mobile-menu, .mobile-menu-exit {
+        display: none;
+    }
+    .navbar .container {
+        display: grid;
+        grid-template-columns: 180px auto;
+        justify-content: unset;
+    }
+
+    .navbar nav {
+        display: flex;
+        justify-content: space-between;
+        background: none;
+        position: unset;
+        height: auto;
+        width: 100%;
+        padding: 0;
+
+        ul {
+            display: flex;
+        }
+
+        a {
+            color: black;
+            font-size: 1em;
+            padding: .1em 1em;
+        }
+
+        ul.primary-nav {
+            margin: 0; 
+           
+        }
+
+        li.current {
+            font-weight: bold;
+        }
+
+        li.pay-us-money-cta {
+            background: none;
+            border: 3px solid var(--primary-color);
+            font-weight: bold;
+            border-radius: 5em;
+            margin-top: -.2em;
+
+            &:hover {
+                background: var(--primary-color);
+            }
+
+            a {
+                color: var(--primary-color);
+
+                &:hover {
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1080px) {
+    .container {
+        width: 1080px;
+        margin: 0 auto;
+    }
+
+    section {
+        padding: 10em 4em;
+    }
+
+    .hero-section .container {
+        display: flex;
+        justify-content: space-between;
+        text-align: left;
+
+        .left-col {
+            margin: 3em 3em 0em 5em;
+
+            h1 {
+                font-size: 3em;
+                width: 90%;
+            }
+        }
+    }
+    .hero-img {
+        width: 30%;
+        margin-right: 8em;
+    }
+
+    .hero-cta {
+        display: flex;
+    }
+    .primary-cta {
+        margin-right: 2em;
+    }
+
+    ul.features-list {
+        display: block;
+        margin-left: 5em;
+        li {
+            font-size: 1.4em;
+            &::before {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+
+    .features-section {
+        position: relative;
+
+        img {
+            display: block;
+            width: 450px;
+            position: absolute;
+            bottom: -2em;
+            right: 0;
+        }
+    }
+
+    .testimonial-section ul {
+        display: flex;
+        li {
+            margin: 0 1em;
+        }
+    }
+
+    .contact-section {
+        position: relative;
+
+        .container {
+            display: flex;
+        }
+    }
+    .contact-right {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 45%;
+        height: 100%;
+
+        iframe {
+            height: 100%;
+        }
+    }
+}
+
+@media only screen and (min-width: 1450px) {
+    .features-section {
+        &:before {
+            content: '';
+            position: absolute;
+            width: 10%;
+            height: 20em;
+            background: var(--primary-color);
+            left: 0;
+            top: -4em;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 20em;
+            background: url('../images/dots.svg') no-repeat;
+            left: 4.5em;
+            top: 2em;
+        }
     }
 }
